@@ -1,0 +1,12 @@
+package fe.tldlib.__tld_gen
+
+import fe.tldlib.ITldNode
+import fe.tldlib.TldNode
+import fe.tldlib.LeavesTldNode
+import fe.tldlib.TldBase
+
+internal class O_v_tlds : TldBase {
+    override fun getTlds(): Map<String, ITldNode> {
+        return mapOf(TldNode.childless("va"),"vc" to LeavesTldNode("com","net","org","gov","mil","edu"),"ve" to LeavesTldNode("arts","bib","co","com","e12","edu","firm","gob","gov","info","int","mil","net","nom","org","rar","rec","store","tec","web"),TldNode.childless("vg"),"vi" to LeavesTldNode("co","com","k12","net","org"),"vn" to LeavesTldNode("ac","ai","biz","com","edu","gov","health","id","info","int","io","name","net","org","pro","angiang","bacgiang","backan","baclieu","bacninh","baria-vungtau","bentre","binhdinh","binhduong","binhphuoc","binhthuan","camau","cantho","caobang","daklak","daknong","danang","dienbien","dongnai","dongthap","gialai","hagiang","haiduong","haiphong","hanam","hanoi","hatinh","haugiang","hoabinh","hungyen","khanhhoa","kiengiang","kontum","laichau","lamdong","langson","laocai","longan","namdinh","nghean","ninhbinh","ninhthuan","phutho","phuyen","quangbinh","quangnam","quangngai","quangninh","quangtri","soctrang","sonla","tayninh","thaibinh","thainguyen","thanhhoa","thanhphohochiminh","thuathienhue","tiengiang","travinh","tuyenquang","vinhlong","vinhphuc","yenbai"),"vu" to LeavesTldNode("com","edu","net","org"),TldNode.childless("vacations"),TldNode.childless("vana"),TldNode.childless("vanguard"),TldNode.childless("vegas"),TldNode.childless("ventures"),TldNode.childless("verisign"),TldNode.childless("versicherung"),TldNode.childless("vet"),TldNode.childless("viajes"),TldNode.childless("video"),TldNode.childless("vig"),TldNode.childless("viking"),TldNode.childless("villas"),TldNode.childless("vin"),TldNode.childless("vip"),TldNode.childless("virgin"),TldNode.childless("visa"),TldNode.childless("vision"),TldNode.childless("viva"),TldNode.childless("vivo"),TldNode.childless("vlaanderen"),TldNode.childless("vodka"),TldNode.childless("volvo"),TldNode.childless("vote"),TldNode.childless("voting"),TldNode.childless("voto"),TldNode.childless("voyage"),TldNode.childless("vermögensberater"),TldNode.childless("vermögensberatung"))
+    }
+}

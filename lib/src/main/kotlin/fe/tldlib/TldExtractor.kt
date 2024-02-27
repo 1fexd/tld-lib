@@ -1,30 +1,55 @@
 package fe.tldlib
 
-data class Host(
-    val subdomains: List<String> = emptyList(),
-    val domainName: String,
-    val tld: String
-)
+import fe.tldlib.__tld_gen.TldLetterLookup
 
 
-fun parseHost(host: String): Host? {
-    val items = host.split(".")
-    if (items.isEmpty()) return null
-    if (items.size == 2) return Host(domainName = items[0], tld = items[1])
+object TldExtractor {
+    data class Host(
+        val subdomains: List<String> = emptyList(),
+        val name: String,
+        val tld: String
+    )
 
-    var lastNode: Map<String, TldNode> = tlds
-    for ((idx, item) in items.reversed().withIndex()) {
-        val currentNode = lastNode[item]
-        if (!currentNode.isNullOrEmpty()) {
-            lastNode = currentNode
-        } else {
-            return Host(
-                items.take(items.size - idx - 2),
-                items[items.size - idx - 2],
-                items.takeLast(idx + 1).joinToString(separator = ".")
-            )
+    fun parseHost(host: String): Host? {
+        val items = host.split(".")
+        if (items.isEmpty()) return null
+        if (items.size == 2) return Host(name = items[0], tld = items[1])
+
+        val reversedItems = items.reversed()
+        val lastItem = reversedItems[0]
+
+        val tldBase = TldLetterLookup.tlds[lastItem[0].toString()]?.value ?: return null
+        var lastNode = tldBase.getTlds()
+        for ((idx, item) in reversedItems.withIndex()) {
+            when (val currentNode = lastNode[item]) {
+                is TldNode? -> {
+                    if (!currentNode.isNullOrEmpty()) {
+                        lastNode = currentNode!!
+                    } else {
+                        return Host(
+                            items.take(items.size - idx - 2),
+                            items[items.size - idx - 2],
+                            items.takeLast(idx + 1).joinToString(separator = ".")
+                        )
+                    }
+                }
+
+                is LeavesTldNode -> {
+                    val leaves = items.takeLast(idx + 2)
+                    if (leaves[0] !in currentNode.leafSet) return null
+
+                    return Host(
+                        items.take(items.size - idx - 3),
+                        items[items.size - idx - 3],
+                        leaves.joinToString(separator = ".")
+                    )
+                }
+            }
         }
-    }
 
-    return null
+        return null
+    }
 }
+
+
+

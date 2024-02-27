@@ -1,0 +1,12 @@
+package fe.tldlib.__tld_gen
+
+import fe.tldlib.ITldNode
+import fe.tldlib.TldNode
+import fe.tldlib.LeavesTldNode
+import fe.tldlib.TldBase
+
+internal class O_g_tlds : TldBase {
+    override fun getTlds(): Map<String, ITldNode> {
+        return mapOf(TldNode.childless("ga"),TldNode.childless("gb"),"gd" to LeavesTldNode("edu","gov"),"ge" to LeavesTldNode("com","edu","gov","org","mil","net","pvt"),TldNode.childless("gf"),"gg" to LeavesTldNode("co","net","org"),"gh" to LeavesTldNode("com","edu","gov","org","mil"),"gi" to LeavesTldNode("com","ltd","gov","mod","edu","org"),"gl" to LeavesTldNode("co","com","edu","net","org"),TldNode.childless("gm"),"gn" to LeavesTldNode("ac","com","edu","gov","org","net"),TldNode.childless("gov"),"gp" to LeavesTldNode("com","net","mobi","edu","org","asso"),TldNode.childless("gq"),"gr" to LeavesTldNode("com","edu","net","org","gov"),TldNode.childless("gs"),"gt" to LeavesTldNode("com","edu","gob","ind","mil","net","org"),"gu" to LeavesTldNode("com","edu","gov","guam","info","net","org","web"),TldNode.childless("gw"),"gy" to LeavesTldNode("co","com","edu","gov","net","org"),TldNode.childless("gal"),TldNode.childless("gallery"),TldNode.childless("gallo"),TldNode.childless("gallup"),TldNode.childless("game"),TldNode.childless("games"),TldNode.childless("gap"),TldNode.childless("garden"),TldNode.childless("gay"),TldNode.childless("gbiz"),TldNode.childless("gdn"),TldNode.childless("gea"),TldNode.childless("gent"),TldNode.childless("genting"),TldNode.childless("george"),TldNode.childless("ggee"),TldNode.childless("gift"),TldNode.childless("gifts"),TldNode.childless("gives"),TldNode.childless("giving"),TldNode.childless("glass"),TldNode.childless("gle"),TldNode.childless("global"),TldNode.childless("globo"),TldNode.childless("gmail"),TldNode.childless("gmbh"),TldNode.childless("gmo"),TldNode.childless("gmx"),TldNode.childless("godaddy"),TldNode.childless("gold"),TldNode.childless("goldpoint"),TldNode.childless("golf"),TldNode.childless("goo"),TldNode.childless("goodyear"),TldNode.childless("goog"),TldNode.childless("google"),TldNode.childless("gop"),TldNode.childless("got"),TldNode.childless("grainger"),TldNode.childless("graphics"),TldNode.childless("gratis"),TldNode.childless("green"),TldNode.childless("gripe"),TldNode.childless("grocery"),TldNode.childless("group"),TldNode.childless("guardian"),TldNode.childless("gucci"),TldNode.childless("guge"),TldNode.childless("guide"),TldNode.childless("guitars"),TldNode.childless("guru"))
+    }
+}

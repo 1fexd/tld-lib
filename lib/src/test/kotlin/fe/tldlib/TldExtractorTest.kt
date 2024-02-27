@@ -4,19 +4,27 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 
-class TldExtractorTest {
-    
+internal class TldExtractorTest {
+
     @Test
     fun test() {
         val data = mapOf(
-            "hallo.schools.nsw.edu.au" to Host(domainName = "hallo", tld = "schools.nsw.edu.au"),
-            "test.ac" to Host(domainName = "test", tld = "ac"),
-            "lulexd.gov.ac" to Host(domainName = "lulexd", tld = "gov.ac"),
-            "sub1.sub2.name.de" to Host(listOf("sub1", "sub2"), "name", "de")
+            "hallo.schools.nsw.edu.au" to TldExtractor.Host(name = "hallo", tld = "schools.nsw.edu.au"),
+            "test.ac" to TldExtractor.Host(name = "test", tld = "ac"),
+            "lulexd.gov.ac" to TldExtractor.Host(name = "lulexd", tld = "gov.ac"),
+            "sub1.sub2.name.de" to TldExtractor.Host(listOf("sub1", "sub2"), "name", "de")
         )
 
         data.forEach { (input, output) ->
-            assertEquals(output, parseHost(input))
+            assertEquals(output, TldExtractor.parseHost(input))
+        }
+    }
+
+    @Test
+    fun testLeaves(){
+        setOf("host.com.ac", "sub1.host.com.ac", "sub1.sub2.host.com.ac", "sub1.sub2.host.gov.ac", "sub1.test.ポイント").forEach { input ->
+            val result = TldExtractor.parseHost(input)
+            println("input=$input, result=$result")
         }
     }
 }

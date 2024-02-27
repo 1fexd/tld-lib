@@ -1,0 +1,12 @@
+package fe.tldlib.__tld_gen
+
+import fe.tldlib.ITldNode
+import fe.tldlib.TldNode
+import fe.tldlib.LeavesTldNode
+import fe.tldlib.TldBase
+
+internal class O_l_tlds : TldBase {
+    override fun getTlds(): Map<String, ITldNode> {
+        return mapOf("la" to LeavesTldNode("int","net","info","edu","gov","per","com","org"),"lb" to LeavesTldNode("com","edu","gov","net","org"),"lc" to LeavesTldNode("com","net","co","org","edu","gov"),TldNode.childless("li"),"lk" to LeavesTldNode("gov","sch","net","int","com","org","edu","ngo","soc","web","ltd","assn","grp","hotel","ac"),"lr" to LeavesTldNode("com","edu","gov","org","net"),"ls" to LeavesTldNode("ac","biz","co","edu","gov","info","net","org","sc"),"lt" to LeavesTldNode("gov"),TldNode.childless("lu"),"lv" to LeavesTldNode("com","edu","gov","org","mil","id","net","asn","conf"),"ly" to LeavesTldNode("com","net","gov","plc","edu","sch","med","org","id"),TldNode.childless("lacaixa"),TldNode.childless("lamborghini"),TldNode.childless("lamer"),TldNode.childless("lancaster"),TldNode.childless("land"),TldNode.childless("landrover"),TldNode.childless("lanxess"),TldNode.childless("lasalle"),TldNode.childless("lat"),TldNode.childless("latino"),TldNode.childless("latrobe"),TldNode.childless("law"),TldNode.childless("lawyer"),TldNode.childless("lds"),TldNode.childless("lease"),TldNode.childless("leclerc"),TldNode.childless("lefrak"),TldNode.childless("legal"),TldNode.childless("lego"),TldNode.childless("lexus"),TldNode.childless("lgbt"),TldNode.childless("lidl"),TldNode.childless("life"),TldNode.childless("lifeinsurance"),TldNode.childless("lifestyle"),TldNode.childless("lighting"),TldNode.childless("like"),TldNode.childless("lilly"),TldNode.childless("limited"),TldNode.childless("limo"),TldNode.childless("lincoln"),TldNode.childless("link"),TldNode.childless("lipsy"),TldNode.childless("live"),TldNode.childless("living"),TldNode.childless("llc"),TldNode.childless("llp"),TldNode.childless("loan"),TldNode.childless("loans"),TldNode.childless("locker"),TldNode.childless("locus"),TldNode.childless("lol"),TldNode.childless("london"),TldNode.childless("lotte"),TldNode.childless("lotto"),TldNode.childless("love"),TldNode.childless("lpl"),TldNode.childless("lplfinancial"),TldNode.childless("ltd"),TldNode.childless("ltda"),TldNode.childless("lundbeck"),TldNode.childless("luxe"),TldNode.childless("luxury"))
+    }
+}
