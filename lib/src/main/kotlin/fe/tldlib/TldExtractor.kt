@@ -11,17 +11,18 @@ object TldExtractor {
     )
 
     fun parseHost(host: String): Host? {
-        val items = host.split(".")
+        val items = host.lowercase().split(".")
         if (items.isEmpty()) return null
         if (items.size == 2) return Host(name = items[0], tld = items[1])
 
         val reversedItems = items.reversed()
-        val lastItem = reversedItems[0]
+        val lastItem = reversedItems[0].lowercase()
+        val lastChar = lastItem[0].toString()
 
-        val tldBase = TldLetterLookup.tlds[lastItem[0].toString()]?.value ?: return null
+        val tldBase = TldLetterLookup.tlds[lastChar]?.value ?: return null
         var lastNode = tldBase.getTlds()
         for ((idx, item) in reversedItems.withIndex()) {
-            when (val currentNode = lastNode[item]) {
+            when (val currentNode = lastNode[item.lowercase()]) {
                 is TldNode? -> {
                     if (!currentNode.isNullOrEmpty()) {
                         lastNode = currentNode!!
