@@ -10,7 +10,7 @@ allOpen {
     annotation("org.openjdk.jmh.annotations.State")
 }
 
-group = "fe.tldlib"
+group = "fe.tld-lib"
 version = versioning.info.tag ?: versioning.info.full
 
 repositories {
