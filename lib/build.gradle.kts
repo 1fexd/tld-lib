@@ -1,6 +1,6 @@
 plugins {
     kotlin("jvm")
-    id("net.nemerosa.versioning") version "3.0.0"
+    id("net.nemerosa.versioning") version "3.1.0"
     id("org.jetbrains.kotlinx.benchmark") version "0.4.10"
     kotlin("plugin.allopen") version "1.9.20"
     `maven-publish`
